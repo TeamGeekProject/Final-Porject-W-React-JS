@@ -5,14 +5,16 @@ export const Card = () => {
   // const { index, item, actions } = props;
 
   return (
-    <div className="card">
+    <div className="card" style={{backgroundColor:"lightgray"}}>
 <div className="container-flex">
         <h3>SELENA GOMEZ</h3>
 
-        <div className="row justify-content-center">
-          <h5 className="Song">Selena Gomez - Calm Down</h5>
+        <div className="row justify-content-center" style={{backgroundColor:"ButtonShadow"}} >
+          <h5 className="Song" >Selena Gomez - Calm Down</h5>
+          <div className="widget">
+          <lu>
           <a
-            className="cover "
+            className="cover"
             role="button"
             href="https://www.youtube.com/watch?v=eJO5HU_7_1w"
             target="_blank"
@@ -49,6 +51,8 @@ export const Card = () => {
             target="_blank"
             rel="noreferrer">
             <p><i className="fa-brands fa-apple"/> Music </p></a>
+            </lu>
+            </div>
 
           <div className="col-3 d-flex  justify-content-center ">
             <img
@@ -61,8 +65,10 @@ export const Card = () => {
       </div>
 
       <div>
-        <div className="row justify-content-center">
+        <div className="row justify-content-center" style={{backgroundColor:"ButtonShadow"}}>
           <h5 className="Song">Selena Gomez - Lose You To Love Me.</h5>
+          <div className="widget">
+          <ul>
           <a
             className="cover "
             role="button"
@@ -94,6 +100,8 @@ export const Card = () => {
             target="_blank"
             rel="noreferrer">
             <p><i className="fa-brands fa-apple"/> Music </p></a>
+            </ul>
+            </div>
 
           <div className="col-3 d-flex  justify-content-center ">
             <img
@@ -105,15 +113,15 @@ export const Card = () => {
         </div>
       </div>
 
-      <div></div>
-
 
 
       <div className="container-flex">
         <h3>EMINEM</h3>
 
-        <div className="row justify-content-center">
+        <div className="row justify-content-center" style={{backgroundColor:"ButtonShadow"}}>
           <h5 className="Song">Eminem - The Real Slim Shady</h5>
+          <div className="widget">
+          <ul>
           <a
             className="cover "
             role="button"
@@ -145,6 +153,8 @@ export const Card = () => {
             target="_blank"
             rel="noreferrer">
             <p><i className="fa-brands fa-apple"/> Music </p></a>
+            </ul>
+            </div>
 
           <div className="col-3 d-flex  justify-content-center ">
             <img
@@ -157,8 +167,10 @@ export const Card = () => {
       </div>
 
       <div>
-        <div className="row justify-content-center">
+        <div className="row justify-content-center" style={{backgroundColor:"ButtonShadow"}}>
           <h5 className="Song">Eminem - Not Afraid.</h5>
+          <div className="widget">
+          <ul>
           <a
             className="cover "
             role="button"
@@ -190,6 +202,8 @@ export const Card = () => {
             target="_blank"
             rel="noreferrer">
             <p><i className="fa-brands fa-apple"/> Music </p></a>
+            </ul>
+            </div>
 
           <div className="col-3 d-flex  justify-content-center ">
             <img
@@ -204,8 +218,10 @@ export const Card = () => {
       <div>
         <h3>THE WEEKND</h3>
 
-        <div className="row justify-content-center">
+        <div className="row justify-content-center" style={{backgroundColor:"ButtonShadow"}}>
           <h5 className="Song">The Weeknd - Save Your Tears</h5>
+          <div className="widget">
+          <ul>
           <a
             className="cover "
             role="button"
@@ -237,6 +253,8 @@ export const Card = () => {
             target="_blank"
             rel="noreferrer">
             <p><i className="fa-brands fa-apple"/> Music </p></a>
+            </ul>
+            </div>
 
           <div className="col-3 d-flex  justify-content-center ">
             <img
@@ -248,8 +266,10 @@ export const Card = () => {
         </div>
       
 
-        <div className="row justify-content-center">
+        <div className="row justify-content-center" style={{backgroundColor:"ButtonShadow"}}>
           <h5 className="Song">The Weeknd - I Feel It Coming ft. Daft Punk</h5>
+          <div className="widget">
+          <ul>
           <a
             className="cover "
             role="button"
@@ -280,6 +300,8 @@ export const Card = () => {
             target="_blank"
             rel="noreferrer">
             <p><i className="fa-brands fa-apple" /> Music </p></a>
+            </ul>
+            </div>
 
           <div className="col-3 d-flex  justify-content-center ">
             <img
