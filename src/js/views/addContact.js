@@ -19,7 +19,7 @@ export const FormContact = () => {
 
   return (
     <div className="container">
-      <h1 className="Title text-center">Create Contact</h1>
+      <h1 className="Title text-center">Reach out</h1>
 
       <div className="row justify-content-center">
         <div className="col-md-6">
@@ -47,18 +47,6 @@ export const FormContact = () => {
               />
             </div>
             <div className="col-12">
-              <label className="form-label">Address</label>
-              <input
-                type="text"
-                onChange={(e) =>
-                  setInput({ ...input, address: e.target.value })
-                }
-                className="form-control"
-                id="inputAddress"
-                placeholder="some@address.com "
-              />
-            </div>
-            <div className="col-12">
               <label className="form-label">Phone</label>
               <input
                 type="text"
@@ -68,6 +56,19 @@ export const FormContact = () => {
                 placeholder="(999) 999-9999"
               />
             </div>
+            <div className="col-12 msg">
+              <label className="form-label">message</label>
+              <input
+                type="text"
+                onChange={(e) =>
+                  setInput({ ...input, address: e.target.value })
+                }
+                className="form-control"
+                id="inputAddress"
+                placeholder=" your message here... "
+              />
+            </div>
+            
 
             {sent &&
               (store.formMessageSuccess != "" ? (
@@ -87,12 +88,12 @@ export const FormContact = () => {
                 type="submit"
                 onClick={(e) => {
                   e.preventDefault();
-                  actions.createContact(input);
+                    actions.createContact(false);
                   setSent(true);
                 }}
                 className="btn btn-primary itemFilter"
               >
-                Create
+                Submit
               </button>
             </div>
           </form>

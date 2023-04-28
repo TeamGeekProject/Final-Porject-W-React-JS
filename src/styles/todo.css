@@ -8,8 +8,8 @@
 
 .Title{
     text-align: center;
-    color: rgb(255, 105, 218);
-    font-family: 'Amatic SC', cursive;
+    color: rgb(0, 0, 0);
+    font-family: 'Cairo Play', sans-serif;
     font-size: 100px;
 }
 
@@ -34,7 +34,7 @@
     font-family:monospace;
 }
 .itemFilter:hover{
-    background-color: rgb(255, 105, 218);
+    background-color: #000000;
     color: white;
     font-family: 'Amatic SC', cursive;
     font-size: 20px;
@@ -54,4 +54,8 @@
     font-family:monospace;
     
 
+}
+
+.fa-brands{
+    font-size:xx-large;
 }

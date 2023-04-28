@@ -4,14 +4,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Navbar = () => {
   return (
-    <nav className="navbar navbar-light bg-light mb-3">
+    <nav className="navbar navbar-dark bg-dark mb-3">
       <Link className="navbar-brand mx-3" to="/home">
-        🏠 <span className="navbar-brand mb-0 h1 itemFilterHome ">Home</span>
+      <i className="fa fa-star text-danger" />
+       <span className="navbar-brand mb-0  ">Stars Music</span>
       </Link>
       <div className="ml-auto">
-        <Link to="/add">
+        <Link to="/contact" >
           <button className="btn btn-primary mx-3 itemFilter">
-            Add a Contact
+          Soundtracks
           </button>
         </Link>
       </div>

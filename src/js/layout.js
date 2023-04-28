@@ -4,12 +4,12 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Who } from "./views/who";
 import { Home } from "./views/home";
-import { Contact } from "./views/contact";
+import { Contact } from "./views/Contact";
 import { FormContact } from "./views/addContact";
 import { EditContact } from "./views/editContact";
 
 import injectContext from "./store/appContext";
-
+import { Header } from "./component/header";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
@@ -23,8 +23,10 @@ const Layout = () => {
     <div>
       <BrowserRouter basename={basename}>
         <ScrollToTop>
+        <Header/>
           <Navbar />
           <Routes>
+            <Route path="/header" element={<Who/>}/>
             <Route path="/who" element={<Who />} />
             <Route path="/add" element={<FormContact />} />
             <Route path="/edit/:contactID/:index" element={<EditContact />} />

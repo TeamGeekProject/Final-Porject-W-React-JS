@@ -1,4 +1,4 @@
-// import React, { useState, useEffect, useContext } from "react";
+//import React, { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,10 +12,10 @@ export const EditContact = () => {
   const { store, actions } = useContext(Context);
   const [sent, setSent] = useState(false); // this is the state that will be used to show the success message
   const [input, setInput] = useState({
-    full_name: "",
-    email: "",
-    address: "",
-    phone: "",
+    // full_name: "",
+    // email: "",
+    // address: "",
+    // phone: "",
   });
 
   return (

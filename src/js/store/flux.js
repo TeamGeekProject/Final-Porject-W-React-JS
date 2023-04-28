@@ -46,7 +46,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             data.msg
               ? (setStore({ formMessageError: data.msg }),
                 setStore({ formMessageSuccess: "" }))
-              : (setStore({ formMessageSuccess: "Contact created" }),
+              : (setStore({ formMessageSuccess: "Your message has been sent!" }),
                 setStore({ formMessageError: "" }),
                 setStore({ contacts: [...store.contacts, data] }));
           })
@@ -93,7 +93,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             data.msg
               ? (setStore({ formMessageError: data.msg }),
                 setStore({ formMessageSuccess: "" }))
-              : (setStore({ formMessageSuccess: "Contact was Updated" }),
+              : (setStore({ formMessageSuccess: "Message was succesful" }),
                 setStore({ formMessageError: "" }),
                 (contacts[index] = data),
                 setStore({ contacts: [...contacts] }));

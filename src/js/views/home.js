@@ -14,7 +14,7 @@ export const Home = (props) => {
       </h1>
 
       <hr className="my-4" /> */}
-      <h1>Team 4 Geeks</h1>
+      <h1>Stars Music Entertainment</h1>
       <br />
       <div>
         <Link to="/contact">
@@ -23,7 +23,7 @@ export const Home = (props) => {
             href="#"
             role="button"
           >
-            View your Contacts
+            Soundtracks
           </span>
         </Link>
       </div>
@@ -35,7 +35,7 @@ export const Home = (props) => {
             href="#"
             role="button"
           >
-            Add a contact
+            Contact Us!
           </span>
         </Link>
       </div>

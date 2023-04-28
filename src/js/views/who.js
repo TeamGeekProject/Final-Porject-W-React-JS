@@ -32,7 +32,7 @@ export const Who = () => (
           <a
             href="https://github.com/spacemc2"
             className="list-group-item list-group-item-action itemFilter"
-            tabindex="-1"
+            tabIndex="-1"
             aria-disabled="true"
           >
             spacemc2

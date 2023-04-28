@@ -1,6 +1,15 @@
 body{
     text-align: center;
 }
+h1{
+    font-family: 'Cairo Play', sans-serif;
+}
+
+.navbar-brand{
+    font-family: 'Cairo Play', sans-serif;
+    font-size:x-large;
+}
+
 
 .todos-container{
     border: 1px solid black;
@@ -13,12 +22,13 @@ body{
     border-top: 1px solid blue;
 }
 
-.delete-button{
+/* .delete-button{
     color:black;
     margin-left: auto;
     margin-right: 25px;
     visibility: hidden;
-}
+} */
+
 
 ul{
     padding: 1px;
