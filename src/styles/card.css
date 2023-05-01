@@ -5,3 +5,15 @@
 .fa-music{
     color: #a225a2;
 }
+.list-group-item{
+    border: none;
+    padding: 0;
+}
+
+.youtube-icon:hover{
+    color: red;
+}
+
+.spotify-icon:hover{
+    color: green;
+}

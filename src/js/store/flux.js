@@ -1,15 +1,41 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
-      contacts: [
+      collection: [
         {
-          full_name: "test",
-          email: "test@gmail.com",
-          address: "someplace",
-          phone: "7864445566",
+          urlImage:
+            "https://i1.sndcdn.com/artworks-joTcOLeuIZh1wF96-GTkmzg-t500x500.jpg",
+          title: "Calm Down",
+          artist: "Selena Gomez",
+          rating: 5,
+          urlYoutube: "https://www.youtube.com/watch?v=eJO5HU_7_1w",
+          urlAppleMusic:
+            "https://music.apple.com/us/album/calm-down-single/1640501237",
+          urlSpotify: "https://open.spotify.com/track/0WtM2NBVQNNJLh6scP13H8",
+        },
+        {
+          urlImage:
+            "https://i1.sndcdn.com/artworks-joTcOLeuIZh1wF96-GTkmzg-t500x500.jpg",
+          title: "Calm Down",
+          artist: "Selena Gomez",
+          rating: 3,
+          urlYoutube: "https://www.youtube.com/watch?v=eJO5HU_7_1w",
+          urlAppleMusic:
+            "https://music.apple.com/us/album/calm-down-single/1640501237",
+          urlSpotify: "https://open.spotify.com/track/0WtM2NBVQNNJLh6scP13H8",
+        },
+        {
+          urlImage:
+            "https://i1.sndcdn.com/artworks-joTcOLeuIZh1wF96-GTkmzg-t500x500.jpg",
+          title: "Calm Down",
+          artist: "Selena Gomez",
+          rating: 4,
+          urlYoutube: "https://www.youtube.com/watch?v=eJO5HU_7_1w",
+          urlAppleMusic:
+            "https://music.apple.com/us/album/calm-down-single/1640501237",
+          urlSpotify: "https://open.spotify.com/track/0WtM2NBVQNNJLh6scP13H8",
         },
       ],
-      agenda_slug: "teamgeekuser",
       formMessageSuccess: "",
       formMessageError: "",
     },
