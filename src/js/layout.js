@@ -5,9 +5,9 @@ import ScrollToTop from "./component/scrollToTop";
 import { Who } from "./views/who";
 import { Home } from "./views/home";
 import { Collection } from "./views/collection";
-
-import { FormContact } from "./views/addContact";
-import { EditContact } from "./views/editContact";
+import { AddSong } from "./views/addSong";
+import { EditSong } from "./views/editSong";
+import { ReachOut } from "./views/reachOut";
 
 import injectContext from "./store/appContext";
 import { Header } from "./component/header";
@@ -27,10 +27,10 @@ const Layout = () => {
           <Header />
           <Navbar />
           <Routes>
-            <Route path="/header" element={<Who />} />
+            <Route path="/reach-out" element={<ReachOut />} />
             <Route path="/who" element={<Who />} />
-            <Route path="/add" element={<FormContact />} />
-            <Route path="/edit/:contactID/:index" element={<EditContact />} />
+            <Route path="/add-song" element={<AddSong />} />
+            <Route path="/edit-song" element={<EditSong />} />
             <Route path="/home" element={<Home />} />
             <Route path="*" element={<Who />} />
             <Route path="/collection" element={<Collection />} />

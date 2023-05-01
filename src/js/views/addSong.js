@@ -7,7 +7,7 @@ import React, { useState, useEffect, useContext } from "react";
 
 import "../../styles/todo.css";
 
-export const FormContact = () => {
+export const AddSong = () => {
   const { store, actions } = useContext(Context);
   const [sent, setSent] = useState(false); // this is the state that will be used to show the success message
   const [input, setInput] = useState({

@@ -1,5 +1,5 @@
-//import React, { useState, useEffect, useContext } from "react";
-import { Link, useParams } from "react-router-dom";
+// import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -7,20 +7,19 @@ import React, { useState, useEffect, useContext } from "react";
 
 import "../../styles/todo.css";
 
-export const EditContact = () => {
-  const { contactID, index } = useParams();
+export const ReachOut = () => {
   const { store, actions } = useContext(Context);
   const [sent, setSent] = useState(false); // this is the state that will be used to show the success message
   const [input, setInput] = useState({
-    // full_name: "",
-    // email: "",
-    // address: "",
-    // phone: "",
+    full_name: "",
+    email: "",
+    address: "",
+    phone: "",
   });
 
   return (
     <div className="container">
-      <h1 className="Title text-center">Edit Contact</h1>
+      <h1 className="Title text-center">Reach out</h1>
 
       <div className="row justify-content-center">
         <div className="col-md-6">
@@ -48,18 +47,6 @@ export const EditContact = () => {
               />
             </div>
             <div className="col-12">
-              <label className="form-label">Address</label>
-              <input
-                type="text"
-                onChange={(e) =>
-                  setInput({ ...input, address: e.target.value })
-                }
-                className="form-control"
-                id="inputAddress"
-                placeholder="some@address.com "
-              />
-            </div>
-            <div className="col-12">
               <label className="form-label">Phone</label>
               <input
                 type="text"
@@ -67,6 +54,18 @@ export const EditContact = () => {
                 className="form-control"
                 id="inputAddress"
                 placeholder="(999) 999-9999"
+              />
+            </div>
+            <div className="col-12 msg">
+              <label className="form-label">message</label>
+              <input
+                type="text"
+                onChange={(e) =>
+                  setInput({ ...input, address: e.target.value })
+                }
+                className="form-control"
+                id="inputAddress"
+                placeholder=" your message here... "
               />
             </div>
 
@@ -88,12 +87,12 @@ export const EditContact = () => {
                 type="submit"
                 onClick={(e) => {
                   e.preventDefault();
-                  actions.updateContact(input, contactID, index);
+                  actions.createContact(false);
                   setSent(true);
                 }}
                 className="btn btn-primary itemFilter"
               >
-                Edit
+                Submit
               </button>
             </div>
           </form>
