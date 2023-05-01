@@ -7,7 +7,7 @@ import React, { useState, useEffect, useContext } from "react";
 
 import "../../styles/todo.css";
 
-export const EditContact = () => {
+export const EditSong = () => {
   const { contactID, index } = useParams();
   const { store, actions } = useContext(Context);
   const [sent, setSent] = useState(false); // this is the state that will be used to show the success message
