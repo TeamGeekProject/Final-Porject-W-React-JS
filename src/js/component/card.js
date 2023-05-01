@@ -1,10 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import StarRatings from "react-star-ratings";
+import { useState } from "react";
 
 import "../../styles/card.css";
 
 export const Card = () => {
   // const { index, item, actions } = props;
+  const [rating, setRating] = useState(1);
+
+  function changeRating(newRating) {
+    setRating(newRating);
+  }
 
   return (
     //     <div className="card" style={{backgroundColor:"lightgray"}}>
@@ -327,8 +334,17 @@ export const Card = () => {
               <p class="card-text mx-2">Selena Gomez - Calm Down</p>
             </div>
             <div className="col-4  d-flex justify-content-end align-items-center">
-              <i class="fa fa-pencil mx-2"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
+              {/* <i class="fa fa-pencil mx-2"></i>
+              <i class="fa fa-star" aria-hidden="true"></i> */}
+              <StarRatings
+                rating={rating}
+                starRatedColor="#FFD700"
+                changeRating={changeRating}
+                starDimension="15px"
+                starSpacing="1px"
+                numberOfStars={5}
+                name="rating"
+              />
             </div>
           </div>
 
