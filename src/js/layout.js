@@ -24,7 +24,7 @@ const Layout = () => {
     <div>
       <BrowserRouter basename={basename}>
         <ScrollToTop>
-          <Header />
+          {/* <Header /> */}
           <Navbar />
           <Routes>
             <Route path="/reach-out" element={<ReachOut />} />
