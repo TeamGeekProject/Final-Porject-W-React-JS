@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import "../../styles/card.css";
+
 export const Card = () => {
   // const { index, item, actions } = props;
 
@@ -325,7 +327,7 @@ export const Card = () => {
               <p class="card-text mx-2">Selena Gomez - Calm Down</p>
             </div>
             <div className="col-4  d-flex justify-content-end align-items-center">
-              <i class="fa fa-pencil"></i>
+              <i class="fa fa-pencil mx-2"></i>
               <i class="fa fa-star" aria-hidden="true"></i>
             </div>
           </div>
