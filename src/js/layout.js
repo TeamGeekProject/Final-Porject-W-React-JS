@@ -4,7 +4,8 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Who } from "./views/who";
 import { Home } from "./views/home";
-import { Contact } from "./views/Contact";
+import { Collection } from "./views/collection";
+
 import { FormContact } from "./views/addContact";
 import { EditContact } from "./views/editContact";
 
@@ -23,16 +24,16 @@ const Layout = () => {
     <div>
       <BrowserRouter basename={basename}>
         <ScrollToTop>
-        <Header/>
+          <Header />
           <Navbar />
           <Routes>
-            <Route path="/header" element={<Who/>}/>
+            <Route path="/header" element={<Who />} />
             <Route path="/who" element={<Who />} />
             <Route path="/add" element={<FormContact />} />
             <Route path="/edit/:contactID/:index" element={<EditContact />} />
             <Route path="/home" element={<Home />} />
             <Route path="*" element={<Who />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/collection" element={<Collection />} />
           </Routes>
           <Footer />
         </ScrollToTop>

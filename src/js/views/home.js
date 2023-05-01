@@ -17,7 +17,7 @@ export const Home = (props) => {
       <h1>Stars Music Entertainment</h1>
       <br />
       <div>
-        <Link to="/contact">
+        <Link to="/collection">
           <span
             className="btn btn-primary btn-lg itemFilter"
             href="#"
