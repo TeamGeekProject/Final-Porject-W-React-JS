@@ -68,7 +68,6 @@ export const FormContact = () => {
                 placeholder=" your message here... "
               />
             </div>
-            
 
             {sent &&
               (store.formMessageSuccess != "" ? (
@@ -88,7 +87,7 @@ export const FormContact = () => {
                 type="submit"
                 onClick={(e) => {
                   e.preventDefault();
-                    actions.createContact(false);
+                  actions.createContact(false);
                   setSent(true);
                 }}
                 className="btn btn-primary itemFilter"

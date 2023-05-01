@@ -23,6 +23,16 @@ const getState = ({ getStore, getActions, setStore }) => {
         const data = await response.json();
         setStore({ contacts: data });
       },
+
+      loadSongs: async () => {
+        const store = getStore();
+        const agenda = store.agenda_slug;
+        const response = await fetch(
+          `https://assets.breatheco.de/apis/fake/contact/agenda/${agenda}`
+        );
+        const data = await response.json();
+        setStore({ contacts: data });
+      },
       createContact: async (input) => {
         // console.log(input);
         const store = getStore();
@@ -46,7 +56,9 @@ const getState = ({ getStore, getActions, setStore }) => {
             data.msg
               ? (setStore({ formMessageError: data.msg }),
                 setStore({ formMessageSuccess: "" }))
-              : (setStore({ formMessageSuccess: "Your message has been sent!" }),
+              : (setStore({
+                  formMessageSuccess: "Your message has been sent!",
+                }),
                 setStore({ formMessageError: "" }),
                 setStore({ contacts: [...store.contacts, data] }));
           })
