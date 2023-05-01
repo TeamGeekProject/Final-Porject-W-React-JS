@@ -362,7 +362,7 @@ export const Card = () => {
 
           <div class="d-flex justify-content-evenly align-items-center mt-2">
             <i className="fa-brands fa-youtube text-danger" />
-            <i className="fa-brands fa-soundcloud " />
+            <i className="fa-brands fa-spotify " />
             <i className="fa-brands fa-apple" />
           </div>
         </div>

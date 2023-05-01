@@ -10,9 +10,9 @@ export const Navbar = () => {
         <span className="navbar-brand mb-0  ">Stars Music</span>
       </Link>
       <div className="ml-auto">
-        <Link to="/collection">
+        <Link to="/add-song">
           <button className="btn btn-primary mx-3 itemFilter">
-            Soundtracks
+            Add Soundtracks
           </button>
         </Link>
       </div>
