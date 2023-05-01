@@ -326,6 +326,18 @@ export const Card = () => {
           class="card-img-top"
           alt="..."
         />
+        <div class="card-img-overlay ">
+          <div class="row justify-content-center">
+            <div className="col-12 d-flex justify-content-end align-items-center">
+              <button type="button" class="btn btn-sm btn-secondary mx-2">
+                <i class="fa fa-pencil "></i>
+              </button>
+              <button type="button" class="btn btn-sm btn-danger">
+                <i class="fa fa-times" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
 
         <div class="card-body">
           <div class="row">
