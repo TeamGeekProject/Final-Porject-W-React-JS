@@ -21,7 +21,9 @@ export const Card = (props) => {
           <div className="row justify-content-center">
             <div className="col-12 d-flex justify-content-end align-items-center">
               <button type="button" className="btn btn-sm btn-secondary mx-2">
-                <i className="fa fa-pencil "></i>
+                <Link to={"/edit-song/" + index + "/" + item.id}>
+                  <i className="fa fa-pencil "></i>
+                </Link>
               </button>
               <button type="button" className="btn btn-sm btn-danger">
                 <i className="fa fa-times" aria-hidden="true"></i>

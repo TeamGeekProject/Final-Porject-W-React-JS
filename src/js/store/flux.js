@@ -5,6 +5,8 @@ import {
   addDoc,
   orderBy,
   query,
+  updateDoc,
+  doc,
 } from "firebase/firestore";
 
 const getState = ({ getStore, getActions, setStore }) => {
@@ -45,7 +47,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         })
           .then((docRef) => {
             console.log("Document written with ID: ", docRef.id);
-            setStore({ formMessageSuccess: "Your message has been sent!" });
+            setStore({ formMessageSuccess: "Your song was added!" });
 
             setStore({ formMessageError: "" });
 
@@ -53,6 +55,35 @@ const getState = ({ getStore, getActions, setStore }) => {
           })
           .catch((error) => {
             console.error("Error adding document: ", error);
+            setStore({ formMessageError: error });
+          });
+      },
+
+      updateSong: async (input, id) => {
+        const store = getStore();
+        const collection = store.collection;
+        const songIndex = collection.findIndex((item) => item.id === id);
+        collection[songIndex] = input;
+        setStore({ collection: [...collection] });
+
+        await updateDoc(doc(db, "songs", id), {
+          urlImage: input.urlImage,
+          title: input.title,
+          artist: input.artist,
+          rating: input.rating,
+          urlYoutube: input.urlYoutube,
+          urlAppleMusic: input.urlAppleMusic,
+          urlSpotify: input.urlSpotify,
+          createdAt: new Date(),
+        })
+          .then(() => {
+            console.log("Document successfully updated!");
+            setStore({ formMessageSuccess: "Your song was updated!" });
+            setStore({ formMessageError: "" });
+          })
+          .catch((error) => {
+            // The document probably doesn't exist.
+            console.error("Error updating document: ", error);
             setStore({ formMessageError: error });
           });
       },
