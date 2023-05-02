@@ -10,13 +10,22 @@ export const Card = (props) => {
   const [rating, setRating] = useState(item.rating);
 
   function changeRating(newRating) {
+    const newUpdatedSong = {
+      ...item,
+      rating: newRating,
+    };
     setRating(newRating);
+    actions.updateSong(newUpdatedSong, item.id);
   }
 
   return (
     <div className="col">
       <div className="card shadow-sm">
-        <img src={item.urlImage} className="card-img-top" alt="..." />
+        <img
+          src={item.urlImage}
+          className="card-img-top card-cover"
+          alt="..."
+        />
         <div className="card-img-overlay ">
           <div className="row justify-content-center">
             <div className="col-12 d-flex justify-content-end align-items-center">
@@ -25,9 +34,62 @@ export const Card = (props) => {
                   <i className="fa fa-pencil "></i>
                 </Link>
               </button>
-              <button type="button" className="btn btn-sm btn-danger">
+              <button
+                type="button"
+                className="btn btn-sm btn-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
+              >
                 <i className="fa fa-times" aria-hidden="true"></i>
               </button>
+
+              {/* <!-- Modal --> */}
+              <div
+                className="modal fade"
+                id="staticBackdrop"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabIndex="-1"
+                aria-labelledby="staticBackdropLabel"
+                aria-hidden="true"
+              >
+                <div className="modal-dialog modal-dialog-centered modal-sm">
+                  <div className="modal-content">
+                    <div className="modal-header ">
+                      <h5 className="modal-title" id="staticBackdropLabel">
+                        Are you sure?
+                      </h5>
+                      <button
+                        type="button"
+                        className="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+
+                    <div className="modal-footer">
+                      <button
+                        type="button"
+                        className="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        No
+                      </button>
+                      <button
+                        type="button"
+                        className="btn btn-danger"
+                        data-bs-dismiss="modal"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          actions.deleteSong(item.id);
+                        }}
+                      >
+                        Yes
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

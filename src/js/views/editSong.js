@@ -23,6 +23,7 @@ export const EditSong = () => {
     urlYoutube: store.collection[index]?.urlYoutube,
     urlAppleMusic: store.collection[index]?.urlAppleMusic,
     urlSpotify: store.collection[index]?.urlSpotify,
+    createdAt: store.collection[index]?.createdAt,
   });
 
   function changeRating(newRating) {

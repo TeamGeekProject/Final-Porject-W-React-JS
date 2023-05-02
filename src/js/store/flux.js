@@ -7,6 +7,7 @@ import {
   query,
   updateDoc,
   doc,
+  deleteDoc,
 } from "firebase/firestore";
 
 const getState = ({ getStore, getActions, setStore }) => {
@@ -15,6 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       collection: [],
       formMessageSuccess: "",
       formMessageError: "",
+      numberOfMessages: 0,
     },
 
     actions: {
@@ -74,7 +76,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           urlYoutube: input.urlYoutube,
           urlAppleMusic: input.urlAppleMusic,
           urlSpotify: input.urlSpotify,
-          createdAt: new Date(),
+          createdAt: input.createdAt,
         })
           .then(() => {
             console.log("Document successfully updated!");
@@ -108,99 +110,44 @@ const getState = ({ getStore, getActions, setStore }) => {
           });
       },
 
-      //   loadData: async () => {
-      //     const store = getStore();
-      //     // const agenda = "";
-      //     // const response = await fetch(
-      //     //   `https://assets.breatheco.de/apis/fake/contact/agenda/${agenda}`
-      //     // );
-      //     // const data = await response.json();
+      sendMessage: async (input) => {
+        const messagesCollection = collection(db, "messages");
 
-      //     let data = [
-      //       {
-      //         id: 1,
-      //         full_name: "Alejandro",
-      //       },
-      //     ];
-      //     setStore({ contacts: data });
-      //   },
-      // createContact: async (input) => {
-      //   // console.log(input);
-      //   const store = getStore();
-      //   const user = store.user;
-      //   await fetch("https://assets.breatheco.de/apis/fake/contact/", {
-      //     method: "POST",
-      //     body: JSON.stringify({
-      //       full_name: input.full_name,
-      //       email: input.email,
-      //       agenda_slug: store.agenda_slug,
-      //       address: input.address,
-      //       phone: input.phone,
-      //     }),
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //   })
-      //     .then((response) => response.json())
-      //     .then((data) => {
-      //       // console.log(data);
-      //       data.msg
-      //         ? (setStore({ formMessageError: data.msg }),
-      //           setStore({ formMessageSuccess: "" }))
-      //         : (setStore({
-      //             formMessageSuccess: "Your message has been sent!",
-      //           }),
-      //           setStore({ formMessageError: "" }),
-      //           setStore({ contacts: [...store.contacts, data] }));
-      //     })
-      //     .catch((error) => {
-      //       console.log("error");
-      //     });
-      // },
-      // deleteContact: async (id, index) => {
-      //   const store = getStore();
-      //   const user = store.user;
-      //   const contacts = store.contacts.filter((item, i) => i !== index);
-      //   await fetch(`https://assets.breatheco.de/apis/fake/contact/${id}`, {
-      //     method: "DELETE",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //   })
-      //     .then(setStore({ contacts: contacts }))
-      //     .catch((error) => console.log("error"));
-      // },
-      // updateContact: async (input, contactID, index) => {
-      //   const store = getStore();
-      //   const contacts = store.contacts;
-      //   await fetch(
-      //     `https://assets.breatheco.de/apis/fake/contact/${contactID}`,
-      //     {
-      //       method: "PUT",
-      //       body: JSON.stringify({
-      //         full_name: input.full_name,
-      //         email: input.email,
-      //         agenda_slug: store.agenda_slug,
-      //         address: input.address,
-      //         phone: input.phone,
-      //       }),
-      //       headers: {
-      //         "Content-Type": "application/json",
-      //       },
-      //     }
-      //   )
-      //     .then((response) => response.json())
-      //     .then((data) => {
-      //       data.msg
-      //         ? (setStore({ formMessageError: data.msg }),
-      //           setStore({ formMessageSuccess: "" }))
-      //         : (setStore({ formMessageSuccess: "Message was succesful" }),
-      //           setStore({ formMessageError: "" }),
-      //           (contacts[index] = data),
-      //           setStore({ contacts: [...contacts] }));
-      //     })
-      //     .catch((error) => console.log(error));
-      // },
+        await addDoc(messagesCollection, {
+          full_name: input.full_name,
+          email: input.email,
+          phone: input.phone,
+          message: input.message,
+          createdAt: new Date(),
+        })
+          .then((docRef) => {
+            console.log("Document written with ID: ", docRef.id);
+            setStore({ formMessageSuccess: "Your message was sent!" });
+
+            setStore({ numberOfMessages: getStore().numberOfMessages + 1 });
+
+            setStore({ formMessageError: "" });
+          })
+          .catch((error) => {
+            console.error("Error adding document: ", error);
+            setStore({ formMessageError: error });
+          });
+      },
+
+      loadNumberOfmessages: async () => {
+        const messagesCollection = collection(db, "messages");
+        const q = query(messagesCollection, orderBy("createdAt", "desc"));
+
+        const messageList = await getDocs(q).catch((error) => {
+          console.log("Error getting documents: ", error);
+        });
+
+        const messageArray = messageList.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setStore({ numberOfMessages: messageArray.length });
+      },
     },
   };
 };
