@@ -88,6 +88,26 @@ const getState = ({ getStore, getActions, setStore }) => {
           });
       },
 
+      deleteSong: async (id) => {
+        const store = getStore();
+        const collection = store.collection;
+        const songIndex = collection.findIndex((item) => item.id === id);
+        collection.splice(songIndex, 1);
+        setStore({ collection: [...collection] });
+
+        await deleteDoc(doc(db, "songs", id))
+          .then(() => {
+            console.log("Document successfully deleted!");
+            setStore({ formMessageSuccess: "Your song was deleted!" });
+            setStore({ formMessageError: "" });
+          })
+          .catch((error) => {
+            // The document probably doesn't exist.
+            console.error("Error deleting document: ", error);
+            setStore({ formMessageError: error });
+          });
+      },
+
       //   loadData: async () => {
       //     const store = getStore();
       //     // const agenda = "";
