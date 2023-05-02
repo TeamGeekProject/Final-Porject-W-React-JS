@@ -3,33 +3,34 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/todo.css";
+// import { Auth } from "../component/auth";
 
 export const Home = (props) => {
   const { store, actions } = useContext(Context);
+
+  console.log(store);
+
   const params = useParams();
   return (
     <div className="jumbotron">
-      {/* <h1 className="display-4">
-        3rd PAGE ---- This will show the demo element: {store.demo[params.theid].title}
-      </h1>
-
-      <hr className="my-4" /> */}
       <h1>Stars Music Entertainment</h1>
       <br />
+
+      {/* <Auth /> */}
       <div>
-        <Link to="/contact">
+        <Link to="/collection">
           <span
             className="btn btn-primary btn-lg itemFilter"
             href="#"
             role="button"
           >
-            Soundtracks
+            Collection
           </span>
         </Link>
       </div>
       <br />
       <div>
-        <Link to="/add">
+        <Link to="/reach-out">
           <span
             className="btn btn-primary btn-lg itemFilter"
             href="#"

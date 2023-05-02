@@ -1,0 +1,25 @@
+.fa-star{
+    color: #FFD700;
+}
+
+.fa-music{
+    color: #a225a2;
+}
+.list-group-item{
+    border: none;
+    padding: 0;
+}
+
+.youtube-icon:hover{
+    color: red;
+}
+
+.spotify-icon:hover{
+    color: green;
+}
+
+.card-cover {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}

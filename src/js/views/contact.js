@@ -13,7 +13,11 @@ export const Contact = () => {
 
   return (
     <div>
-      <h1 className="mb-3">St<i className="fa fa-star text-danger"/>rs Free Music</h1>
+      <h1 className="mb-3">
+        St
+        <i className="fa fa-star text-danger" />
+        rs Free Music
+      </h1>
       <h6>Get unlimited access to our music videos & more</h6>
       {store.contacts.map((item, index) => {
         return (
