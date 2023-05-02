@@ -15,16 +15,14 @@ export const AddSong = () => {
     urlImage: "",
     title: "",
     artist: "",
-    rating: "",
+    rating: 0,
     urlYoutube: "",
     urlAppleMusic: "",
     urlSpotify: "",
   });
 
-  const [rating, setRating] = useState(1);
-
   function changeRating(newRating) {
-    setRating(newRating);
+    setInput({ ...input, rating: newRating });
   }
 
   return (
@@ -38,7 +36,7 @@ export const AddSong = () => {
               <label className="form-label h5">Title</label>
               <input
                 type="text"
-                onChange={(e) => setInput({ ...input, email: e.target.value })}
+                onChange={(e) => setInput({ ...input, title: e.target.value })}
                 className="form-control"
                 id="inputAddress"
                 placeholder="Title"
@@ -48,7 +46,7 @@ export const AddSong = () => {
               <label className="form-label h5">Artist</label>
               <input
                 type="text"
-                onChange={(e) => setInput({ ...input, phone: e.target.value })}
+                onChange={(e) => setInput({ ...input, artist: e.target.value })}
                 className="form-control"
                 id="inputAddress"
                 placeholder="Artist"
@@ -58,7 +56,7 @@ export const AddSong = () => {
               <label className="form-label h5 ">Image Url</label>
               <input
                 onChange={(e) =>
-                  setInput({ ...input, full_name: e.target.value })
+                  setInput({ ...input, urlImage: e.target.value })
                 }
                 type="text"
                 className="form-control"
@@ -71,7 +69,7 @@ export const AddSong = () => {
               <input
                 type="text"
                 onChange={(e) =>
-                  setInput({ ...input, address: e.target.value })
+                  setInput({ ...input, urlYoutube: e.target.value })
                 }
                 className="form-control"
                 id="inputAddress"
@@ -83,7 +81,7 @@ export const AddSong = () => {
               <input
                 type="text"
                 onChange={(e) =>
-                  setInput({ ...input, address: e.target.value })
+                  setInput({ ...input, urlSpotify: e.target.value })
                 }
                 className="form-control"
                 id="inputAddress"
@@ -95,7 +93,7 @@ export const AddSong = () => {
               <input
                 type="text"
                 onChange={(e) =>
-                  setInput({ ...input, address: e.target.value })
+                  setInput({ ...input, urlAppleMusic: e.target.value })
                 }
                 className="form-control"
                 id="inputAddress"
@@ -104,7 +102,7 @@ export const AddSong = () => {
             </div>
 
             <StarRatings
-              rating={rating}
+              rating={input.rating}
               starRatedColor="#FFD700"
               changeRating={changeRating}
               starDimension="40px"
@@ -130,7 +128,8 @@ export const AddSong = () => {
                 type="submit"
                 onClick={(e) => {
                   e.preventDefault();
-                  actions.createContact(false);
+                  actions.addSong(input);
+                  console.log(input);
                   setSent(true);
                 }}
                 className="btn btn-primary itemFilter"

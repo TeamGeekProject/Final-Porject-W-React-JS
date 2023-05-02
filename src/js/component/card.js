@@ -14,27 +14,27 @@ export const Card = (props) => {
   }
 
   return (
-    <div class="col">
-      <div class="card shadow-sm">
-        <img src={item.urlImage} class="card-img-top" alt="..." />
-        <div class="card-img-overlay ">
-          <div class="row justify-content-center">
+    <div className="col">
+      <div className="card shadow-sm">
+        <img src={item.urlImage} className="card-img-top" alt="..." />
+        <div className="card-img-overlay ">
+          <div className="row justify-content-center">
             <div className="col-12 d-flex justify-content-end align-items-center">
-              <button type="button" class="btn btn-sm btn-secondary mx-2">
-                <i class="fa fa-pencil "></i>
+              <button type="button" className="btn btn-sm btn-secondary mx-2">
+                <i className="fa fa-pencil "></i>
               </button>
-              <button type="button" class="btn btn-sm btn-danger">
-                <i class="fa fa-times" aria-hidden="true"></i>
+              <button type="button" className="btn btn-sm btn-danger">
+                <i className="fa fa-times" aria-hidden="true"></i>
               </button>
             </div>
           </div>
         </div>
 
-        <div class="card-body">
-          <div class="row">
+        <div className="card-body">
+          <div className="row">
             <div className="col-8 d-flex justify-content-start align-items-center">
-              <i class="fa fa-music " aria-hidden="true"></i>
-              <p class="card-text mx-2">
+              <i className="fa fa-music " aria-hidden="true"></i>
+              <p className="card-text mx-2">
                 {item.artist} - {item.title}
               </p>
             </div>
@@ -51,7 +51,7 @@ export const Card = (props) => {
             </div>
           </div>
 
-          <div class="d-flex justify-content-evenly align-items-center mt-2">
+          <div className="d-flex justify-content-evenly align-items-center mt-2">
             <a
               href={item.urlYoutube}
               className="list-group-item "

@@ -20,9 +20,9 @@ export const Collection = () => {
       </h1>
       <h6>Get unlimited access to our music videos & more</h6>
 
-      <div class="album py-5 bg-light">
-        <div class="container">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div className="album py-5 bg-light">
+        <div className="container">
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             {store.collection.map((item, index) => {
               return (
                 <Card key={index} index={index} item={item} actions={actions} />
