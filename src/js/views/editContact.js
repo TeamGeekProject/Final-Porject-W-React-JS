@@ -1,5 +1,5 @@
-// import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+//import React, { useState, useEffect, useContext } from "react";
+import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -7,35 +7,25 @@ import React, { useState, useEffect, useContext } from "react";
 
 import "../../styles/todo.css";
 
-export const ReachOut = () => {
+export const EditContact = () => {
+  const { contactID, index } = useParams();
   const { store, actions } = useContext(Context);
   const [sent, setSent] = useState(false); // this is the state that will be used to show the success message
   const [input, setInput] = useState({
-    full_name: "",
-    email: "",
-    message: "",
-    phone: "",
+    // full_name: "",
+    // email: "",
+    // address: "",
+    // phone: "",
   });
-
-  console.log(store);
 
   return (
     <div className="container">
-      <h1 className="Title text-center">Reach out</h1>
-
-      <div className="row justify-content-center my-2">
-        <div className="col-md-6 ">
-          <h5 className="text-center">
-            Send us a message. We have received {store.numberOfMessages} until
-            now.
-          </h5>
-        </div>
-      </div>
+      <h1 className="Title text-center">Edit Contact</h1>
 
       <div className="row justify-content-center">
-        <div className="col-md-6 ">
+        <div className="col-md-6">
           <form className="row g-3 ">
-            <div className="col-6">
+            <div className="col-12">
               <label className="form-label">Full Name</label>
               <input
                 onChange={(e) =>
@@ -45,16 +35,6 @@ export const ReachOut = () => {
                 className="form-control"
                 id="inputAddress"
                 placeholder="Full Name"
-              />
-            </div>
-            <div className="col-6">
-              <label className="form-label">Phone</label>
-              <input
-                type="text"
-                onChange={(e) => setInput({ ...input, phone: e.target.value })}
-                className="form-control"
-                id="inputAddress"
-                placeholder="(999) 999-9999"
               />
             </div>
             <div className="col-12">
@@ -67,18 +47,27 @@ export const ReachOut = () => {
                 placeholder="Email"
               />
             </div>
-
-            <div className="col-12 msg text-center justify-content-center">
-              <label className="form-label">message</label>
-
-              <textarea
-                className="form-control"
-                id="exampleFormControlTextarea1"
-                rows="3"
+            <div className="col-12">
+              <label className="form-label">Address</label>
+              <input
+                type="text"
                 onChange={(e) =>
-                  setInput({ ...input, message: e.target.value })
+                  setInput({ ...input, address: e.target.value })
                 }
-              ></textarea>
+                className="form-control"
+                id="inputAddress"
+                placeholder="some@address.com "
+              />
+            </div>
+            <div className="col-12">
+              <label className="form-label">Phone</label>
+              <input
+                type="text"
+                onChange={(e) => setInput({ ...input, phone: e.target.value })}
+                className="form-control"
+                id="inputAddress"
+                placeholder="(999) 999-9999"
+              />
             </div>
 
             {sent &&
@@ -99,12 +88,12 @@ export const ReachOut = () => {
                 type="submit"
                 onClick={(e) => {
                   e.preventDefault();
-                  actions.sendMessage(input);
+                  actions.updateContact(input, contactID, index);
                   setSent(true);
                 }}
                 className="btn btn-primary itemFilter"
               >
-                Submit
+                Edit
               </button>
             </div>
           </form>

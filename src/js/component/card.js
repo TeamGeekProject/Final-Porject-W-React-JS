@@ -1,314 +1,143 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import StarRatings from "react-star-ratings";
+import { useState } from "react";
 
-export const Card = () => {
-  // const { index, item, actions } = props;
+import "../../styles/card.css";
+
+export const Card = (props) => {
+  const { index, item, actions } = props;
+  const [rating, setRating] = useState(item.rating);
+
+  function changeRating(newRating) {
+    const newUpdatedSong = {
+      ...item,
+      rating: newRating,
+    };
+    setRating(newRating);
+    actions.updateSong(newUpdatedSong, item.id);
+  }
 
   return (
-    <div className="card" style={{backgroundColor:"lightgray"}}>
-<div className="container-flex">
-        <h3>SELENA GOMEZ</h3>
-
-        <div className="row justify-content-center" style={{backgroundColor:"ButtonShadow"}} >
-          <h5 className="Song" >Selena Gomez - Calm Down</h5>
-          <div className="widget">
-          <lu>
-          <a
-            className="cover"
-            role="button"
-            href="https://www.youtube.com/watch?v=eJO5HU_7_1w"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <i className="fa-brands fa-youtube text-danger" />
-          </a>
-          <p>YouTube</p>
-
-          <a
-            className="cover"
-            style={{color:"orange"}}
-            role="button"
-            href="https://soundcloud.com/selena-gomez-official/wolves?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <i className="fa-brands fa-soundcloud " />
-          </a>
-          <p>SoundCloud</p>
-          <a
-            className="cover"
-            role="button"
-            href="https://soundcloud.com/selena-gomez-official/wolves?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
-            target="_blank"
-            rel="noreferrer"
-          >
-          </a>
-          <a
-          className="cover"
-          style={{color:"black"}}
-            role="button"
-            href="https://music.apple.com/us/album/calm-down-single/1640501237"
-            target="_blank"
-            rel="noreferrer">
-            <p><i className="fa-brands fa-apple"/> Music </p></a>
-            </lu>
+    <div className="col">
+      <div className="card shadow-sm">
+        <img
+          src={item.urlImage}
+          className="card-img-top card-cover"
+          alt="..."
+        />
+        <div className="card-img-overlay ">
+          <div className="row justify-content-center">
+            <div className="col-12 d-flex justify-content-end align-items-center">
+              <button type="button" className="btn btn-sm btn-secondary mx-2">
+                <Link to={"/edit-song/" + index + "/" + item.id}>
+                  <i className="fa fa-pencil "></i>
+                </Link>
+              </button>
+              <button
+                type="button"
+                className="btn btn-sm btn-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
+              >
+                <i className="fa fa-times" aria-hidden="true"></i>
+              </button>
             </div>
+          </div>
+        </div>
 
-          <div className="col-3 d-flex  justify-content-center ">
-            <img
-              src="https://i1.sndcdn.com/artworks-joTcOLeuIZh1wF96-GTkmzg-t500x500.jpg"
-              className="  rounded h-75 my-auto "
-              alt="agenda picture"
-            />
+        <div className="card-body">
+          <div className="row">
+            <div className="col-8 d-flex justify-content-start align-items-center">
+              <i className="fa fa-music " aria-hidden="true"></i>
+              <p className="card-text mx-2">
+                {item.artist} - {item.title}
+              </p>
+            </div>
+            <div className="col-4  d-flex justify-content-end align-items-center">
+              <StarRatings
+                rating={rating}
+                starRatedColor="#FFD700"
+                changeRating={changeRating}
+                starDimension="15px"
+                starSpacing="1px"
+                numberOfStars={5}
+                name="rating"
+              />
+            </div>
+          </div>
+
+          <div className="d-flex justify-content-evenly align-items-center mt-2">
+            <a
+              href={item.urlYoutube}
+              className="list-group-item "
+              target="_blank"
+            >
+              <i className="fa-brands fa-youtube  youtube-icon" />
+            </a>
+            <a
+              href={item.urlSpotify}
+              className="list-group-item "
+              target="_blank"
+            >
+              <i className="fa-brands fa-spotify spotify-icon" />
+            </a>
+
+            <a
+              href={item.urlAppleMusic}
+              className="list-group-item "
+              target="_blank"
+            >
+              <i className="fa-brands fa-apple " />
+            </a>
           </div>
         </div>
       </div>
 
-      <div>
-        <div className="row justify-content-center" style={{backgroundColor:"ButtonShadow"}}>
-          <h5 className="Song">Selena Gomez - Lose You To Love Me.</h5>
-          <div className="widget">
-          <ul>
-          <a
-            className="cover "
-            role="button"
-            href="https://www.youtube.com/watch?v=zlJDTxahav0"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <i className="fa-brands fa-youtube text-danger" />
-          </a>
-          <p>YouTube</p>
-
-          <a
-            className="cover"
-            style={{color:"orange"}}
-            role="button"
-            href="https://soundcloud.com/selena-gomez-official/lose-you-to-love-me-demo?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <i className="fa-brands fa-soundcloud " />
-          </a>
-          <p>SoundCloud</p>
-
-          <a
-          className="cover"
-          style={{color:"black"}}
-            role="button"
-            href="https://music.apple.com/us/album/lose-you-to-love-me-single/1484383006 "
-            target="_blank"
-            rel="noreferrer">
-            <p><i className="fa-brands fa-apple"/> Music </p></a>
-            </ul>
+      {/* <!-- Modal --> */}
+      <div
+        className="modal fade"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabIndex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered modal-sm">
+          <div className="modal-content">
+            <div className="modal-header ">
+              <h5 className="modal-title" id="staticBackdropLabel">
+                Are you sure?
+              </h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
             </div>
 
-          <div className="col-3 d-flex  justify-content-center ">
-            <img
-              src="https://i1.sndcdn.com/artworks-000621941680-nst7y8-t500x500.jpg "
-              className="  rounded h-75 my-auto "
-              alt="agenda picture"
-            />
-          </div>
-        </div>
-      </div>
-
-
-
-      <div className="container-flex">
-        <h3>EMINEM</h3>
-
-        <div className="row justify-content-center" style={{backgroundColor:"ButtonShadow"}}>
-          <h5 className="Song">Eminem - The Real Slim Shady</h5>
-          <div className="widget">
-          <ul>
-          <a
-            className="cover "
-            role="button"
-            href="https://www.youtube.com/watch?v=eJO5HU_7_1w"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <i className="fa-brands fa-youtube text-danger" />
-          </a>
-          <p>YouTube</p>
-
-          <a
-            className="cover"
-            style={{color:"orange"}}
-            role="button"
-            href="https://soundcloud.com/eminemofficial/not-afraid-2?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <i className="fa-brands fa-soundcloud " />
-          </a>
-          <p>SoundCloud</p>
-
-          <a
-          className="cover"
-          style={{color:"black"}}
-            role="button"
-            href=" https://music.apple.com/us/album/the-slim-shady-lp-expanded-edition/1453196979"
-            target="_blank"
-            rel="noreferrer">
-            <p><i className="fa-brands fa-apple"/> Music </p></a>
-            </ul>
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                No
+              </button>
+              <button
+                type="button"
+                className="btn btn-danger"
+                data-bs-dismiss="modal"
+                onClick={(e) => {
+                  e.preventDefault();
+                  actions.deleteSong(item.id);
+                }}
+              >
+                Yes
+              </button>
             </div>
-
-          <div className="col-3 d-flex  justify-content-center ">
-            <img
-              src="https://images.squarespace-cdn.com/content/v1/5ee2ad9278ac8244e278c82c/1639713886965-PIGE0M4XSZZFB0TZ0LLK/The_Slim_Shining_LP_Cover.jpg?format=500w"
-              className="  rounded h-75 my-auto "
-              alt="agenda picture"
-            />
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <div className="row justify-content-center" style={{backgroundColor:"ButtonShadow"}}>
-          <h5 className="Song">Eminem - Not Afraid.</h5>
-          <div className="widget">
-          <ul>
-          <a
-            className="cover "
-            role="button"
-            href="https://www.youtube.com/watch?v=j5-yKhDd64s&list=PLRgSHCeagEV4KTedHndOxXLXqZr4okOCA&index=2"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <i className="fa-brands fa-youtube text-danger" />
-          </a>
-          <p>YouTube</p>
-
-          <a
-            className="cover"
-            style={{color:"orange"}}
-            role="button"
-            href="https://soundcloud.com/eminemofficial/not-afraid-2?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <i className="fa-brands fa-soundcloud " />
-          </a>
-          <p>SoundCloud</p>
-
-          <a
-          className="cover"
-          style={{color:"black"}}
-            role="button"
-            href="https://music.apple.com/us/album/not-afraid/1446625834?i=1446626443 "
-            target="_blank"
-            rel="noreferrer">
-            <p><i className="fa-brands fa-apple"/> Music </p></a>
-            </ul>
-            </div>
-
-          <div className="col-3 d-flex  justify-content-center ">
-            <img
-              src="https://m.media-amazon.com/images/M/MV5BMmVjNTViYmMtY2MxZS00NzJkLTlkNmUtNDc1ODAzMzExNjI1XkEyXkFqcGdeQXVyNzU3Nzk4MDQ@._V1_.jpg"
-              className="  rounded h-75 my-auto "
-              alt="agenda picture"
-            />
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <h3>THE WEEKND</h3>
-
-        <div className="row justify-content-center" style={{backgroundColor:"ButtonShadow"}}>
-          <h5 className="Song">The Weeknd - Save Your Tears</h5>
-          <div className="widget">
-          <ul>
-          <a
-            className="cover "
-            role="button"
-            href="https://www.youtube.com/watch?v=XXYlFuWEuKI"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <i className="fa-brands fa-youtube text-danger" />
-          </a>
-          <p>YouTube</p>
-
-          <a
-            className="cover"
-            style={{color:"orange"}}
-            role="button"
-            href="https://soundcloud.com/theweeknd/the-weeknd-ariana-grande-save"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <i className="fa-brands fa-soundcloud " />
-          </a>
-          <p>SoundCloud</p>
-
-          <a
-          className="cover"
-          style={{color:"black"}}
-            role="button"
-            href="https://music.apple.com/us/album/save-your-tears/1499378108?i=1499378613 "
-            target="_blank"
-            rel="noreferrer">
-            <p><i className="fa-brands fa-apple"/> Music </p></a>
-            </ul>
-            </div>
-
-          <div className="col-3 d-flex  justify-content-center ">
-            <img
-              src="https://i0.wp.com/www.alexurbanpop.com/wp-content/uploads/2022/01/The-Weeknd-Save-Your-Tears.jpg?resize=500%2C500&ssl=1"
-              className="  rounded h-75 my-auto "
-              alt="agenda picture"
-            />
-          </div>
-        </div>
-      
-
-        <div className="row justify-content-center" style={{backgroundColor:"ButtonShadow"}}>
-          <h5 className="Song">The Weeknd - I Feel It Coming ft. Daft Punk</h5>
-          <div className="widget">
-          <ul>
-          <a
-            className="cover "
-            role="button"
-            href="https://www.youtube.com/watch?v=qFLhGq0060w"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <i className="fa-brands fa-youtube text-danger" />
-          </a>
-          <p>YouTube</p>
-
-          <a
-            className="cover"
-            style={{color:"orange"}}
-            role="button"
-            href="https://soundcloud.com/theweeknd/i-feel-it-coming-1?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <i className="fa-brands fa-soundcloud " />
-          </a>
-          <p>SoundCloud</p>
-
-          <a
-          className="cover" style={{color:"black"}}
-            role="button"
-            href=" "
-            target="_blank"
-            rel="noreferrer">
-            <p><i className="fa-brands fa-apple" /> Music </p></a>
-            </ul>
-            </div>
-
-          <div className="col-3 d-flex  justify-content-center ">
-            <img
-              src="https://i1.sndcdn.com/artworks-000533992041-dmicel-t500x500.jpg"
-              className="  rounded h-75 my-auto "
-              alt="agenda picture"
-            />
           </div>
         </div>
       </div>

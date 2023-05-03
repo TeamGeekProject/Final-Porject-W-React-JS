@@ -24,13 +24,13 @@ const Layout = () => {
     <div>
       <BrowserRouter basename={basename}>
         <ScrollToTop>
-          <Header />
+          {/* <Header /> */}
           <Navbar />
           <Routes>
             <Route path="/reach-out" element={<ReachOut />} />
             <Route path="/who" element={<Who />} />
             <Route path="/add-song" element={<AddSong />} />
-            <Route path="/edit-song" element={<EditSong />} />
+            <Route path="/edit-song/:index/:songID" element={<EditSong />} />
             <Route path="/home" element={<Home />} />
             <Route path="*" element={<Who />} />
             <Route path="/collection" element={<Collection />} />
