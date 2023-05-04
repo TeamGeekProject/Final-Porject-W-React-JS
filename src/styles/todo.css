@@ -59,3 +59,15 @@
 .fa-brands{
     font-size:xx-large;
 }
+.ipod{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family: 'Cairo Play', sans-serif;
+    font-size: 28px;
+}
+.music{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family: 'Cairo Play', sans-serif;
+    font-size: 40px;
+}
