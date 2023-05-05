@@ -64,6 +64,7 @@ export const Home = () => {
             style={{height:"600px" , weith:"300px"}}
             src="https://www.instyle.com/thmb/QpjZRwXCoZc5_agQOIhjU7-yQBg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/ScreenShot2023-01-13at12.30.54PM_result-db4c577f726745c992251507bafbb825.jpg"
             alt="Third slide"
+            rounded
           />
           <Carousel.Caption>
             <h1>Miley Cyrus</h1>
