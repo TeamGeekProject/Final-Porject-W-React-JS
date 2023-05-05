@@ -71,3 +71,22 @@
     font-family: 'Cairo Play', sans-serif;
     font-size: 40px;
 }
+.Title1{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family: 'Cairo Play', sans-serif;
+    font-size: 80px;
+}
+.Title2{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family: 'Cairo Play', sans-serif;
+    font-size: 50px;
+}
+
+.Caption{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family: 'Cairo Play', sans-serif;
+    font-size: 30px;
+}

@@ -11,11 +11,19 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 
 export const Ipod = () => {
-  const [currentMusicDetails, setCurrentMusicDetails] = useState({
-    songName: "Chasing",
-    songArtist: "NEFFEX",
-    songSrc: "./Assets/songs/Chasing - NEFFEX.mp3",
-  });
+  const [currentMusicDetails, setCurrentMusicDetails] = useState(
+    // {
+    // songName: "Chasing",
+    // songArtist: "NEFFEX",
+    // songSrc: "./Assets/songs/Chasing - NEFFEX.mp3"
+    // },
+    {
+      songSrc: "https://audioplayer.madza.dev/Madza-Chords_of_Life.mp3",
+      songName: "Chords of Life",
+      songArtist: "Unknown",
+      // tags: ["house"],
+    },
+  );
 
   //UseStates Variables
   const [audioProgress, setAudioProgress] = useState(0);
@@ -46,30 +54,22 @@ export const Ipod = () => {
 
   const musicAPI = [
     {
-      songName: "Chasing",
-      songArtist: "NEFFEX",
-      songSrc: "../Apna Bana Le - Full Audio _ Bhediya _ Varun Dhawan",
+      songSrc: "https://audioplayer.madza.dev/Madza-Chords_of_Life.mp3",
+      songName: "Chords of Life",
+      songArtist: "House",
+      // tags: ["house"],
     },
     {
-      songName: "AURORA - Runaway",
-      songArtist: "Aurora Aksnes",
-      songSrc: "../public_Assets_songs_AURORA - Runaway (Lyrics).mp3",
+      songSrc: "https://audioplayer.madza.dev/Madza-Late_Night_Drive.mp3",
+      songName: "Chords of Life",
+      songArtist: "Dnb",
+      // tags: ["dnb"],
     },
     {
-      songName: "Catch Me If I Fall",
-      songArtist: "TEGNENT",
-      songSrc: "../public_Assets_songs_Catch Me If I Fall - NEFFEX.mp3",
-    },
-    {
-      songName: "Inspired (Clean)",
-      songArtist: "NEFFEX",
-      songSrc: "../public_Assets_songs_Inspired (Clean) - NEFFEX.mp3",
-    },
-    {
-      songName: "Baby doll [ slowed + reverb ]",
-      songArtist: "Kanika Kapoor",
-      songSrc:
-        "../public_Assets_songs_Baby doll [ slowed + reverb ] __ meet bros",
+      songSrc: "https://audioplayer.madza.dev/Madza-Persistence.mp3",
+      songName: "Chords of Life",
+      songArtist: "Dubstep",
+      // tags: ["budstep"],
     },
   ];
 
@@ -170,7 +170,7 @@ export const Ipod = () => {
             value={audioProgress}
             onChange={handleMusicProgressBar}
           />
-          <ReactAudioPlayer autoPlay controls src=" " crossOrigin="anonymous" />
+          <ReactAudioPlayer autoPlay controls src={currentAudio} crossOrigin="anonymous" />
           <div className="music Controlers">
             <i
               className="fa-solid fa-backward musicControler"
