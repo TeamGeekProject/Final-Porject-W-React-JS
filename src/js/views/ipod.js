@@ -61,16 +61,17 @@ export const Ipod = () => {
     },
     {
       songSrc: "https://audioplayer.madza.dev/Madza-Late_Night_Drive.mp3",
-      songName: "Chords of Life",
+      songName: "Late Night Drive",
       songArtist: "Dnb",
       // tags: ["dnb"],
     },
     {
       songSrc: "https://audioplayer.madza.dev/Madza-Persistence.mp3",
-      songName: "Chords of Life",
+      songName: "Persistence",
       songArtist: "Dubstep",
       // tags: ["budstep"],
     },
+    
   ];
 
   const handleNextSong = () => {
