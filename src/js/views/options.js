@@ -21,7 +21,7 @@ export const Options = (props) => {
       <div>
         <Link to="/collection">
           <span
-            className="btn btn-primary btn-lg itemFilter"
+            className="btn btn-secondary btn-lg itemFilter"
             href="#"
             role="button"
           >
@@ -33,7 +33,7 @@ export const Options = (props) => {
       <div>
         <Link to="/reach-out">
           <span
-            className="btn btn-primary btn-lg itemFilter"
+            className="btn btn-secondary btn-lg itemFilter"
             href="#"
             role="button"
           >
@@ -45,7 +45,7 @@ export const Options = (props) => {
       <div>
         <Link to="/who">
           <span
-            className="btn btn-primary btn-lg itemFilter"
+            className="btn btn-secondary btn-lg itemFilter"
             href="#"
             role="button "
           >

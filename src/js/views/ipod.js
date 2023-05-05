@@ -56,19 +56,19 @@ export const Ipod = () => {
     {
       songSrc: "https://audioplayer.madza.dev/Madza-Chords_of_Life.mp3",
       songName: "Chords of Life",
-      songArtist: "Unknown",
+      songArtist: "House",
       // tags: ["house"],
     },
     {
       songSrc: "https://audioplayer.madza.dev/Madza-Late_Night_Drive.mp3",
       songName: "Chords of Life",
-      songArtist: "Unknown",
+      songArtist: "Dnb",
       // tags: ["dnb"],
     },
     {
       songSrc: "https://audioplayer.madza.dev/Madza-Persistence.mp3",
       songName: "Chords of Life",
-      songArtist: "Unknown",
+      songArtist: "Dubstep",
       // tags: ["budstep"],
     },
   ];
