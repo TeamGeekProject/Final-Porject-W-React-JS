@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export const Home = () => {
   return (
-    <div className="container col-8">
+    <div className="container col-9">
       <Carousel>
         <Carousel.Item interval={1000}>
           <Image
