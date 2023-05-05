@@ -18,7 +18,7 @@ export const Home = () => {
       </Button></Link> */}
     </div>
     <br/>
-      <Carousel>
+      <Carousel className="col-12-lg col-12-md col-12-sm">
         <Carousel.Item interval={1000}>
           <Image
             className="d-block container-flex w-100" 
