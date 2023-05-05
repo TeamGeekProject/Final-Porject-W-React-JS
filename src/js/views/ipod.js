@@ -20,7 +20,7 @@ export const Ipod = () => {
     {
       songSrc: "https://audioplayer.madza.dev/Madza-Chords_of_Life.mp3",
       songName: "Chords of Life",
-      songArtist: "Unknown",
+      songArtist: "House",
       // tags: ["house"],
     },
   );
@@ -31,7 +31,7 @@ export const Ipod = () => {
   const [musicIndex, setMusicIndex] = useState(0);
   const [musicTotalLength, setMusicTotalLength] = useState("04 : 38");
   const [musicCurrentTime, setMusicCurrentTime] = useState("00 : 00");
-  const [videoIndex, setVideoIndex] = useState(0);
+  // const [videoIndex, setVideoIndex] = useState(0);
 
   const currentAudio = useRef();
 
@@ -44,7 +44,7 @@ export const Ipod = () => {
   //Play Audio Function
   const handleAudioPlay = () => {
     if (currentAudio.current.paused) {
-      currentAudio.current.play();
+     currentAudio.current.play();
       setIsAudioPlaying(true);
     } else {
       currentAudio.current.pause();
@@ -132,21 +132,21 @@ export const Ipod = () => {
     setAudioProgress(isNaN(progress) ? 0 : progress);
   };
 
-  const vidArray = [""];
+  // const vidArray = [""];
 
-  const handleChangeBackground = () => {
-    if (videoIndex >= vidArray.length - 1) {
-      setVideoIndex(0);
-    } else {
-      setVideoIndex(videoIndex + 1);
-    }
-  };
+  // const handleChangeBackground = () => {
+  //   if (videoIndex >= vidArray.length - 1) {
+  //     setVideoIndex(0);
+  //   } else {
+  //     setVideoIndex(videoIndex + 1);
+  //   }
+  // };
 
   return (
     <>
       <div className="ipod container">
         <audio
-          src="../Apna Bana Le - Full Audio _ Bhediya _ Varun Dhawan"
+          src="https://audioplayer.madza.dev/Madza-Chords_of_Life.mp3"
           ref={currentAudio}
           onEnded={handleNextSong}
           onTimeUpdate={handleAudioUpdate}
@@ -170,7 +170,7 @@ export const Ipod = () => {
             value={audioProgress}
             onChange={handleMusicProgressBar}
           />
-          <ReactAudioPlayer autoPlay controls src={currentAudio} crossOrigin="anonymous" />
+          {/* <ReactAudioPlayer autoPlay controls src={currentAudio} crossOrigin="anonymous" /> */}
           <div className="music Controlers">
             <i
               className="fa-solid fa-backward musicControler"
@@ -187,6 +187,15 @@ export const Ipod = () => {
               onClick={handleNextSong}
             ></i>
           </div>
+          <div>
+          {/* <ReactAudioPlayer
+             autoPlay
+             controls 
+             ref={}
+             src={}
+             crossOrigin="anonymous"
+             /> */}
+             </div>
         </div>
       </div>
     </>
