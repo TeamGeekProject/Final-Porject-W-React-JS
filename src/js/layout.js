@@ -9,13 +9,12 @@ import { Collection } from "./views/collection";
 import { AddSong } from "./views/addSong";
 import { EditSong } from "./views/editSong";
 import { ReachOut } from "./views/reachOut";
-// import { Ipod } from "./views/ipod";
+import { Ipod } from "./views/ipod";
 
 import injectContext from "./store/appContext";
 import { Header } from "./component/header";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-
 
 //create your first component
 const Layout = () => {
@@ -35,7 +34,7 @@ const Layout = () => {
             <Route path="/add-song" element={<AddSong />} />
             <Route path="/edit-song/:index/:songID" element={<EditSong />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/options" element={<Options/>}/>
+            <Route path="/options" element={<Options />} />
             <Route path="*" element={<Home />} />
             <Route path="/collection" element={<Collection />} />
             <Route path="/ipod" element={<Ipod />} />
