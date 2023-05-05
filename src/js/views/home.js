@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 export const Home = () => {
   return (
     <div className="container col-9">
+    <h1 className="Title"><strong>What's New...</strong></h1>
     <br/>
     <div className="d-block gap-2">
     <Link to={"/ipod"}><Button variant="dark" size="md">
