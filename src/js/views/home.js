@@ -7,11 +7,11 @@ import Button from 'react-bootstrap/Button';
 export const Home = () => {
   return (
     <div className="container col-9">
-    <h1 className="Title"><strong>What's New...</strong></h1>
+    <h1 className="Title2"><strong>What's New...</strong></h1>
     <br/>
     <div className="d-block gap-2">
-    <Link to={"/ipod"}><Button variant="dark" size="md">
-    <p>St<i className="fa fa-star text-danger"/>rs Free Music IPOD <i className="fa fa-music text-danger" /> </p>
+    <Link to={"/ipod"}><Button className="bounce" variant="outline-dark" size="md">
+    <p>St<i className="fa fa-star text-danger"/>rs Free Music IPOD  <i className="fa-solid fa-headphones fa-fade text-danger"></i> </p>
       </Button></Link>
       {/* <Link to={"/collection"}><Button variant="secondary" size="lg">
         Library

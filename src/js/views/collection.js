@@ -61,7 +61,7 @@ export const Collection = () => {
         </div>
       </Alert>
 
-      {!show && <Button variant="danger" onClick={() => setShow(true)}>Submit</Button>}
+      {!show && <Button variant="outline-danger" onClick={() => setShow(true)}>Submit</Button>}
         </Modal.Body>
       </Modal>
       </div>

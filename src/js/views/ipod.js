@@ -145,7 +145,7 @@ export const Ipod = () => {
 
   return (
     <>
-      <div className="ipod container">
+      <div className="ipod container rounded border" style={{width:"400px"}}>
         <audio
           src="https://audioplayer.madza.dev/Madza-Chords_of_Life.mp3"
           ref={currentAudio}
@@ -155,10 +155,11 @@ export const Ipod = () => {
         <div className="blackScreen"></div>
         <div className="music-Container">
           <p className="music Player">
-            <strong>Playing Now</strong>
+            <strong>Playing Now<i className="fa fa-music fa-beat-fade text-danger" /></strong>
           </p>
-          <img className="musicCover" src="https://picsum.photos/200/200" />
-          <p className="music-Head-Name">{currentMusicDetails.songName}</p>
+          <img className="musicCover rounded" src="https://picsum.photos/300/300" 
+          />
+          <h3 className="music-Head-Name"><strong>{currentMusicDetails.songName}</strong></h3>
           <p className="music-Artist-Name">{currentMusicDetails.songArtist}</p>
           <div className="musicTimerDiv">
             <p className="musicCurrentTime">{musicCurrentTime}</p>
@@ -179,7 +180,7 @@ export const Ipod = () => {
             ></i>
             <i
               className={`fa-solid ${
-                isAudioPlaying ? "fa-pause-circle" : "fa-circle-play"
+                isAudioPlaying ? "fa-pause-circle text-danger" : "fa-circle-play text-success"
               } playBtn`}
               onClick={handleAudioPlay}
             ></i>
