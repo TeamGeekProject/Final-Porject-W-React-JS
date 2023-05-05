@@ -11,7 +11,7 @@ export const Home = () => {
     <br/>
     <div className="d-block gap-2">
     <Link to={"/ipod"}><Button variant="dark" size="md">
-    <p>St<i className="fa fa-star text-danger"/>rs Free Music IPOD </p>
+    <p>St<i className="fa fa-star text-danger"/>rs Free Music IPOD <i className="fa fa-music text-danger" /> </p>
       </Button></Link>
       {/* <Link to={"/collection"}><Button variant="secondary" size="lg">
         Library
