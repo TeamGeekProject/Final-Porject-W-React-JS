@@ -8,7 +8,7 @@ import { Collection } from "./views/collection";
 import { AddSong } from "./views/addSong";
 import { EditSong } from "./views/editSong";
 import { ReachOut } from "./views/reachOut";
-import { Ipod } from './views/ipod';
+import { Ipod } from "./views/ipod";
 
 import injectContext from "./store/appContext";
 import { Header } from "./component/header";
@@ -35,7 +35,7 @@ const Layout = () => {
             <Route path="/home" element={<Home />} />
             <Route path="*" element={<Who />} />
             <Route path="/collection" element={<Collection />} />
-            <Route path="/ipod" element={<Ipod/>}/>
+            <Route path="/ipod" element={<Ipod />} />
           </Routes>
           <Footer />
         </ScrollToTop>

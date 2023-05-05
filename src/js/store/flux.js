@@ -14,9 +14,10 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       collection: [],
+      numberOfMessages: 0,
+
       formMessageSuccess: "",
       formMessageError: "",
-      numberOfMessages: 0,
     },
 
     actions: {
@@ -24,8 +25,8 @@ const getState = ({ getStore, getActions, setStore }) => {
         const songsCollection = collection(db, "songs");
         //i need to order the collection by rating
         const q = query(songsCollection, orderBy("createdAt", "desc"));
-
         const songList = await getDocs(q);
+
         const songArray = songList.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
@@ -33,7 +34,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 
         setStore({ collection: songArray });
       },
-
       addSong: async (input) => {
         const songsCollection = collection(db, "songs");
 
@@ -60,7 +60,6 @@ const getState = ({ getStore, getActions, setStore }) => {
             setStore({ formMessageError: error });
           });
       },
-
       updateSong: async (input, id) => {
         const store = getStore();
         const collection = store.collection;
@@ -89,7 +88,6 @@ const getState = ({ getStore, getActions, setStore }) => {
             setStore({ formMessageError: error });
           });
       },
-
       deleteSong: async (id) => {
         const store = getStore();
         const collection = store.collection;
@@ -109,7 +107,6 @@ const getState = ({ getStore, getActions, setStore }) => {
             setStore({ formMessageError: error });
           });
       },
-
       sendMessage: async (input) => {
         const messagesCollection = collection(db, "messages");
 
@@ -133,7 +130,6 @@ const getState = ({ getStore, getActions, setStore }) => {
             setStore({ formMessageError: error });
           });
       },
-
       loadNumberOfmessages: async () => {
         const messagesCollection = collection(db, "messages");
         const q = query(messagesCollection, orderBy("createdAt", "desc"));
