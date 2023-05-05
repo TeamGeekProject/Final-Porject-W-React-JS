@@ -2,10 +2,21 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import Image from 'react-bootstrap/Image';
 import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 export const Home = () => {
   return (
     <div className="container col-9">
+    <br/>
+    <div className="d-block gap-2">
+    <Link to={"/ipod"}><Button variant="dark" size="md">
+    <p>St<i className="fa fa-star text-danger"/>rs Free Music IPOD </p>
+      </Button></Link>
+      {/* <Link to={"/collection"}><Button variant="secondary" size="lg">
+        Library
+      </Button></Link> */}
+    </div>
+    <br/>
       <Carousel>
         <Carousel.Item interval={1000}>
           <Image
