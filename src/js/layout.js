@@ -4,6 +4,7 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Who } from "./views/who";
 import { Home } from "./views/home";
+import { Options } from "./views/options";
 import { Collection } from "./views/collection";
 import { AddSong } from "./views/addSong";
 import { EditSong } from "./views/editSong";
@@ -14,6 +15,7 @@ import injectContext from "./store/appContext";
 import { Header } from "./component/header";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+
 
 //create your first component
 const Layout = () => {
@@ -33,7 +35,8 @@ const Layout = () => {
             <Route path="/add-song" element={<AddSong />} />
             <Route path="/edit-song/:index/:songID" element={<EditSong />} />
             <Route path="/home" element={<Home />} />
-            <Route path="*" element={<Who />} />
+            <Route path="/options" element={<Options/>}/>
+            <Route path="*" element={<Home />} />
             <Route path="/collection" element={<Collection />} />
             <Route path="/ipod" element={<Ipod/>}/>
           </Routes>
