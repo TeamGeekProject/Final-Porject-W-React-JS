@@ -18,10 +18,10 @@ export const Home = () => {
       </Button></Link> */}
     </div>
     <br/>
-      <Carousel className="col-12-lg col-12-md col-12-sm">
+      <Carousel>
         <Carousel.Item interval={1000}>
           <Image
-            className="d-block container-flex w-100" 
+            className="d-block container-flex w-100 col-12-lg col-8-md col-4-sm"
             style={{height:"600px" , weith:"300px"}}
             src="https://i.ytimg.com/vi/6ZPzqZoRrtk/maxresdefault.jpg"
             alt="First slide"
@@ -41,7 +41,7 @@ export const Home = () => {
         </Carousel.Item>
         <Carousel.Item interval={1000}>
           <Image
-            className="d-block container-flex w-100"
+            className="d-block container-flex w-100 col-12-lg col-8-md col-4-sm"
             style={{height:"600px", weith:"300px"}}
             src="https://media1.popsugar-assets.com/files/thumbor/dnq1ey9NFN4HkZ-SdTMUczRXCuY/126x0:2880x1446/fit-in/1200x630/filters:format_auto-!!-:strip_icc-!!-/2022/09/07/793/n/1922283/06d8ca866318dce88a41a7.87742136_.png"
             alt="Second slide"
@@ -60,7 +60,7 @@ export const Home = () => {
         </Carousel.Item>
         <Carousel.Item>
           <Image
-            className="d-block container-flex w-100"
+            className="d-block container-flex w-100 col-12-lg col-8-md col-4-sm"
             style={{height:"600px" , weith:"300px"}}
             src="https://www.instyle.com/thmb/QpjZRwXCoZc5_agQOIhjU7-yQBg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/ScreenShot2023-01-13at12.30.54PM_result-db4c577f726745c992251507bafbb825.jpg"
             alt="Third slide"
