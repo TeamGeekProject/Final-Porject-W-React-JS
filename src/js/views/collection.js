@@ -28,7 +28,7 @@ export const Collection = () => {
       </h1>
       <h6>Get unlimited access to our music videos & more</h6>
       <div>
-      <p className="subscription" role="button" onClick={() => setLgShow(true)} style={{color:"red"}}>Subscribe</p>
+      <p className="subscription border rounded text-danger" role="button" onClick={() => setLgShow(true)} style={{color:"black"}}>Subscribe</p>
       <Modal
         size="lg"
         show={lgShow}

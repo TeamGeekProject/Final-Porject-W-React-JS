@@ -9,8 +9,13 @@ import {
   faPauseCircle,
   faPlayCircle,
 } from "@fortawesome/free-regular-svg-icons";
+// import * as React from 'react';
+// import * as ReactDOM from 'react-dom';
+// import { DarkModeSwitch } from 'react-toggle-dark-mode';
+
 
 export const Ipod = () => {
+
   const [currentMusicDetails, setCurrentMusicDetails] = useState(
     // {
     // songName: "Chasing",

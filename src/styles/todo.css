@@ -90,3 +90,11 @@
     font-family: 'Cairo Play', sans-serif;
     font-size: 30px;
 }
+.dark {
+    background-color: #333;
+    color:#fff;
+    }
+.light {
+    background-color: #fff;
+    color: #333;
+}
