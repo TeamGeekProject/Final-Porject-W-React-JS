@@ -90,7 +90,7 @@ export const FormContact = () => {
                   actions.createContact(false);
                   setSent(true);
                 }}
-                className="btn btn-primary itemFilter"
+                className="btn btn-secondary itemFilter"
               >
                 Submit
               </button>
@@ -102,7 +102,7 @@ export const FormContact = () => {
       <br />
       <div>
         <Link to="/home">
-          <button className="btn btn-primary itemFilter">Back home</button>
+          <button className="btn btn-secondary itemFilter">Back home</button>
         </Link>
       </div>
       <br />
