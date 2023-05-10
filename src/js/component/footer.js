@@ -12,5 +12,6 @@ All Rights Reserved.</p>
       </a>{" "}
       <i className="fa fa-heart text-danger" />
     </p>
+    <p>Happy coding! <i className="fa-solid fa-code"/></p>
   </footer>
 );
