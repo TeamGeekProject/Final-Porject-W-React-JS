@@ -13,7 +13,7 @@ export const Who = () => (
 
         <div className="list-group">
         <a
-            href="https://github.com/organizations/TeamGeekProject/settings/profile"
+            href="https://github.com/TeamGeekProject"
             className="list-group-item list-group-item-action itemFilter"
             aria-current="true"
           >

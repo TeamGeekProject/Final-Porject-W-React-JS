@@ -66,12 +66,12 @@ export const Navbar = () => {
     >
       <div className="container-fluid">
         <Link className="navbar-brand mx-2" to="/home">
-          <i className="fa fa-star text-danger" />
+          {/* <i className="fa fa-star text-danger" /> */}
           <span
             className="navbar-brand mb-0 text-light"
             styles={{ color: "white" }}
           >
-            Stars Music
+            St<i className="fa fa-star text-danger" />rs Music
           </span>{" "}
         </Link>
         <button
