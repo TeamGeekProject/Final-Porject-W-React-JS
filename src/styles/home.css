@@ -7,7 +7,19 @@ h1{
 
 .navbar-brand{
     font-family: 'Cairo Play', sans-serif;
-    font-size:x-large;
+    font-size:30px;
+}
+.navbar-link-style{
+    font-family: 'Cairo Play', sans-serif;
+    font-size:24px;
+}
+
+.navbar-link-style:hover{
+    color: white;
+}
+
+.navbar-brand:hover{
+    color: white;
 }
 
 
