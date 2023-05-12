@@ -23,7 +23,7 @@ export const Navbar = () => {
     //       <Dropdown.Menu>
     //         <Dropdown.Item href="#/action-1">
     //           <Link to="/add-song">
-    //             <button Name="btn btn-secondary mx-3 itemFilter">
+    //             <button className="btn btn-secondary mx-3 itemFilter">
     //               Add Soundtracks
     //             </button>
     //           </Link>
@@ -111,14 +111,9 @@ export const Navbar = () => {
             <a className="nav-link text-secondary navbar-link-style" href="/ipod">
               Ipod
             </a>
+           
             <a
-              className="nav-link text-secondary navbar-link-style d-flex justify-content-end"
-              href="/reach-out"
-            >
-              <span className=" "> {" "}</span>
-            </a>
-            <a
-              className="nav-link text-secondary navbar-link-style d-flex justify-content-end"
+              className="nav-link text-secondary navbar-link-style"
               href="/reach-out"
             >
               Contact us
