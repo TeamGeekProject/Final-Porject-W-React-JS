@@ -13,10 +13,12 @@ export const Options = (props) => {
 
   const params = useParams();
   return (
-    <div className="jumbotron">
+    <div className="jumbotron container rounded border" style={{width:"800px"}}>
+    <br/>
       <h1>Stars Music Entertainment</h1>
       <br />
       <h1>Bio/ Our Story</h1>
+      <br/>
       <p>
         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
         accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
@@ -32,6 +34,7 @@ export const Options = (props) => {
         quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
         voluptas nulla pariatur?"
       </p>
+      <br/>
       {/* <Auth /> */}
       <div>
         <Link to="/collection">
@@ -68,6 +71,7 @@ export const Options = (props) => {
           </span>
         </Link>
       </div>
+      <br/>
     </div>
   );
 };
