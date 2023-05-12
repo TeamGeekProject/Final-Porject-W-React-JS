@@ -105,9 +105,6 @@ export const Navbar = () => {
             >
               Collection
             </a>{" "}
-            <a class="nav-link text-secondary navbar-link-style " href="/music">
-              Music
-            </a>{" "}
             <a class="nav-link text-secondary navbar-link-style" href="/who">
               Creators
             </a>{" "}

@@ -143,8 +143,10 @@ export const AddSong = () => {
 
       <br />
       <div>
-        <Link to="/home">
-          <button className="btn btn-primary itemFilter">Back home</button>
+        <Link to="/collection">
+          <button className="btn btn-primary itemFilter">
+            Back to Collection
+          </button>
         </Link>
       </div>
       <br />
