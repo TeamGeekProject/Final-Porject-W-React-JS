@@ -5,7 +5,6 @@ import { Dropdown } from "react-bootstrap";
 
 export const Navbar = () => {
   return (
-
     // <nav className="navbar navbar-dark bg-dark mb-3">
     //   <Link className="navbar-brand mx-2" to="/home">
     //     <i className="fa fa-star text-danger" />
@@ -71,7 +70,9 @@ export const Navbar = () => {
             className="navbar-brand mb-0 text-light"
             styles={{ color: "white" }}
           >
-            St<i className="fa fa-star text-danger" />rs Music
+            St
+            <i className="fa fa-star text-danger" />
+            rs Music
           </span>{" "}
         </Link>
         <button
@@ -90,7 +91,7 @@ export const Navbar = () => {
           ></span>
         </button>
         <div
-          className="collapse navbar-collapse justify-content-center"
+          className="collapse navbar-collapse justify-content-end"
           id="navbarNavAltMarkup"
         >
           <div className="navbar-nav">
@@ -107,11 +108,12 @@ export const Navbar = () => {
             >
               Collection
             </a>{" "}
-            
-            <a className="nav-link text-secondary navbar-link-style" href="/ipod">
+            <a
+              className="nav-link text-secondary navbar-link-style"
+              href="/ipod"
+            >
               Ipod
             </a>
-           
             <a
               className="nav-link text-secondary navbar-link-style"
               href="/reach-out"
