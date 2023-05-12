@@ -98,3 +98,25 @@
     background-color: #fff;
     color: #333;
 }
+image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .circle-image {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  
+  
+  
+  
+  
+  
+  
