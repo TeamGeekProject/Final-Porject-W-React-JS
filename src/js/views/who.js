@@ -19,7 +19,7 @@ export const Who = () => (
           >
           <img className="musicCover rounded" src="https://avatars.githubusercontent.com/u/128603767?s=400&u=4889c435b45beda27f7e669e0864d152aa4f5965&v=4" style={{width: '50px', height: '50px'}}/>
           <br/>
-            TeamGeekProject
+            TeamGeek
           </a>
 
           <a
