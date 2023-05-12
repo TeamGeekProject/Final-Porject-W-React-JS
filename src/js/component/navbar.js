@@ -5,6 +5,7 @@ import { Dropdown } from "react-bootstrap";
 
 export const Navbar = () => {
   return (
+
     // <nav className="navbar navbar-dark bg-dark mb-3">
     //   <Link className="navbar-brand mx-2" to="/home">
     //     <i className="fa fa-star text-danger" />
@@ -22,7 +23,7 @@ export const Navbar = () => {
     //       <Dropdown.Menu>
     //         <Dropdown.Item href="#/action-1">
     //           <Link to="/add-song">
-    //             <button className="btn btn-secondary mx-3 itemFilter">
+    //             <button Name="btn btn-secondary mx-3 itemFilter">
     //               Add Soundtracks
     //             </button>
     //           </Link>
@@ -60,10 +61,10 @@ export const Navbar = () => {
     //   </div>
     // </nav>
     <nav
-      class="navbar navbar-expand-lg  navbar navbar-dark bg-dark "
+      className="navbar navbar-expand-lg  navbar navbar-dark bg-dark "
       data-bs-theme="dark"
     >
-      <div class="container-fluid">
+      <div className="container-fluid">
         <Link className="navbar-brand mx-2" to="/home">
           <i className="fa fa-star text-danger" />
           <span
@@ -74,51 +75,50 @@ export const Navbar = () => {
           </span>{" "}
         </Link>
         <button
-          class="navbar-toggler "
+          className="navbar-toggler "
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNavAltMarkup"
           aria-controls="navbarNavAltMarkup"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          // className={isHovered ? "hoveredButton" : ""}
         >
           <span
-            class="navbar-toggler-icon "
+            className="navbar-toggler-icon "
             //make this elememt white
           ></span>
         </button>
         <div
-          class="collapse navbar-collapse justify-content-center"
+          className="collapse navbar-collapse justify-content-center"
           id="navbarNavAltMarkup"
         >
-          <div class="navbar-nav">
+          <div className="navbar-nav">
             <a
-              class="nav-link active text-secondary navbar-link-style"
+              className="nav-link active text-secondary navbar-link-style"
               aria-current="page"
               href="/add-song"
             >
               Add Soundtracks
             </a>
             <a
-              class="nav-link text-secondary navbar-link-style"
+              className="nav-link text-secondary navbar-link-style"
               href="/collection"
             >
               Collection
             </a>{" "}
-            <a class="nav-link text-secondary navbar-link-style" href="/who">
-              Creators
-            </a>{" "}
-            <a class="nav-link text-secondary navbar-link-style" href="/ipod">
+            
+            <a className="nav-link text-secondary navbar-link-style" href="/ipod">
               Ipod
             </a>
             <a
-              class="nav-link text-secondary navbar-link-style d-flex justify-content-end"
+              className="nav-link text-secondary navbar-link-style d-flex justify-content-end"
               href="/reach-out"
             >
-              <span class=" "> {"        "}</span>
+              <span className=" "> {" "}</span>
             </a>
             <a
-              class="nav-link text-secondary navbar-link-style d-flex justify-content-end"
+              className="nav-link text-secondary navbar-link-style d-flex justify-content-end"
               href="/reach-out"
             >
               Contact us

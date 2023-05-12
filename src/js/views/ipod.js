@@ -205,6 +205,7 @@ export const Ipod = () => {
              </div>
         </div>
       </div>
+      <br/>
     </>
   );
 };

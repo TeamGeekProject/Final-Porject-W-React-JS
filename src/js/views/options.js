@@ -13,7 +13,7 @@ export const Options = (props) => {
 
   const params = useParams();
   return (
-    <div className="jumbotron container rounded border" style={{width:"800px"}}>
+    <div className="jumbotron container rounded border mb-4" style={{width:"800px"}}>
     <br/>
       <h1>Stars Music Entertainment</h1>
       <br />
